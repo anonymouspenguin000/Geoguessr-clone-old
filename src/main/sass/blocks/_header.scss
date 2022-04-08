@@ -1,0 +1,54 @@
+.header {
+  background: #000020;
+  border-bottom: $sidebar-accent-border;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  &__container {
+    align-items: center;
+    height: $header-height;
+    justify-content: space-between;
+    @include container(true);
+  }
+  &__logo {
+    font-size: 1.5em;
+    height: 1em;
+    &:before {
+      background: url("../img/logo.png") no-repeat 50% 50%;
+      background-size: 5rem;
+      content: "";
+      display: block;
+      filter: invert(100%) $white-color-transform;
+      float: left;
+      height: 5rem;
+      margin-right: 1rem;
+      margin-top: -0.5rem;
+      width: 5rem;
+    }
+  }
+  @media screen and (max-width: $mblxl) {
+    &__container {
+      justify-content: center;
+      width: 100%;
+    }
+    &__logo {
+      white-space: nowrap;
+    }
+    &__profile {
+      position: fixed;
+      right: 15px;
+      top: calc(#{$header-height} + 5px);
+    }
+  }
+  @media screen and (max-width: $mblm) {
+    &__logo {
+      transform: scale(0.8);
+    }
+  }
+  @media screen and (max-width: $mbls) {
+    &__logo {
+      transform: scale(0.7);
+    }
+  }
+}

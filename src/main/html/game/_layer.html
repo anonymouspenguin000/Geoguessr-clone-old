@@ -1,0 +1,16 @@
+<div class="game__ui game-ui">
+    <div class="game-ui__panel game-ui__panel--top panel">
+        <div class="panel__part panel__part--left card-set card-set--utils">
+            @@include('_utils/_compass.html')
+            @@include('_utils/_timer.html')
+        </div>
+        @@include('_round.html')
+    </div>
+    <div class="game-ui__panel game-ui__panel--bottom panel">
+        @@include('_navigation.html')
+        <div class="panel__part guess-card">
+            @@include('_guess/_minimap-tools.html')
+            @@include('_guess/_guess.html')
+        </div>
+    </div>
+</div>

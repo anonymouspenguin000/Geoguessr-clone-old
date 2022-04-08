@@ -1,0 +1,64 @@
+.navigation {
+  &__btn {
+    padding: 0 0.5em;
+  }
+}
+.guess-card {
+  flex-direction: column;
+  height: 400px;
+  transition-duration: 0.5s;
+  width: 300px;
+  &__minimap-tools {
+    width: 100%;
+    @include flex();
+  }
+  &__guess {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow-y: hidden;
+    width: 100%;
+  }
+}
+.minimap-tools {
+  &__btn {
+    $z: 1.4em;
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: $z;
+    transform: scale(0.9);
+    width: $z;
+    &:last-child {
+      margin-left: auto;
+    }
+  }
+}
+.guess {
+  &__minimap {
+    //$z: 30rem;
+    border: 1px solid #ffffff;
+    flex-grow: 1;
+    //height: $z;
+    margin: 1rem 0;
+    width: 99%;
+    * {
+      cursor: crosshair !important;
+    }
+  }
+  &__guess {
+    background-color: #ffffff;
+    border-radius: $ui-bdrs;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+.minimap {
+  &__map {
+    height: 100%;
+    width: 100%;
+  }
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include('_head.html', { titleSuffix: '' })
+    <link rel="stylesheet" href="css/game.min.css">
+    <script src="js/game.js"></script>
+</head>
+<body>
+@@include('_layer.html')
+@@include('game/_results.html')
+<div class="game">
+    @@include('game/_prepare.html')
+    @@include('game/_layer.html')
+    @@include('game/_main.html')
+</div>
+<script src="js/game_map.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+* Usage:
+* * Create the manager:
+*   let sm = new StorageManager(sessionStorage);
+*   // First argument - the storage you want to manage.
+* * It also takes two optional arguments:
+*   (storage, readonly=false, u=false)
+*   // Set readonly `true`, if you only want to read properties, but not to write, delete...
+*   // Set u `true` (u-unique) if you want to protect properties from rewriting
+* * Use methods:
+*   sm.method(a, b, c...) => ([result] || true || false)
+* Methods:
+* * has(key:string[, emp:boolean=true]) => (true || false)
+* * * Returns if the pair exists.
+* * * It returns true, even if the pair exists, but its value is empty: ''. Set emp `false` to prevent this performance.
+* * get(key:string) => ([string] || null)
+* * * Returns the value of the pair. `null` if doesn't exist. Empty string if the pair exists, but its value is empty.
+* * every(type:int) => ([array] || false)
+* * * Returns an array with all the keys(type=0) or values(type=1) or entries/pairs(type=2).
+* * set(key:string, val:string[, u:boolean=[constructor]]) => (true || false)
+* * * Adds/rewrites a pair. Returns if success.
+* * * u, by default, inherits the constructor. If you didn't set u in the initialization, you can pass it here. So, it
+* * *  prevents rewriting. If the pair already exists, the method will fail.
+* * * If you did set u in the initialization, you can't pass `false` here. If you try, the method will fail.
+* * reserve(key:string) => (true || false)
+* * * The same as `set(key, '', true)`, but shorter. It creates a pair with an empty value. Returns if success.
+* * * It reserves a key to protect it from rewriting till u is passed in the constructor or in the set() method.
+* * del(key:string[, keepKey:boolean=false]) => (true || false)
+* * * Fully deletes a pair. Returns if success.
+* * * Set keepKey `true` to keep the key and delete only its value.
+* * clearAll() => (true || false)
+* * * Clears the whole storage. Returns if success.
+* * obj() => ([object])
+* * * Returns a copy of the storage as an object.
+* If you've passed readonly `true` in the initialization and then ever used set(), reserve(), del() or clearAll(), they will fail.
+* The end :D

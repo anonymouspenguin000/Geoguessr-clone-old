@@ -1,0 +1,10 @@
+.game-ui {
+  &__panel {
+    margin: 2rem;
+    &--bottom {
+      align-items: flex-end !important;
+    }
+  }
+}
+@import "panels";
+@import "tools";

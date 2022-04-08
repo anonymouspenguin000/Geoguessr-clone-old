@@ -1,0 +1,71 @@
+@import "vars";
+@import "fonts";
+@import "mixins";
+
+/* Styles out of BEM */
+html {
+  font-size: 62.5%;
+  min-height: 100%;
+}
+body {
+  background: $main-bg;
+  color: $text-color;
+  cursor: default;
+  font-family: Abel;
+  font-size: 2.5rem;
+  height: 100%;
+}
+::selection {
+  background-color: rgba(0, 0, 0, 0);
+  color: $selection-color;
+}
+a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
+}
+i {
+  font-style: italic;
+}
+button, input, textarea {
+  font-family: inherit;
+}
+.txt-min {
+  font-size: 0.7em;
+}
+.section-header {
+  font-size: 4rem;
+  font-weight: bold;
+  padding: 0.5em 0;
+  text-align: center;
+  &--smaller {
+    font-size: 3.5rem;
+  }
+}
+.paragraph {
+  padding: 0.25em 0;
+  line-height: 1.15em;
+  &--center {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: $tbt){
+  html {
+    font-size: 70%;
+  }
+}
+.icon {
+  &__img {
+    height: 100%;
+  }
+}
+
+/* Sections */
+@import "blocks/texts";
+@import "blocks/buttons";
+@import "blocks/tables";
+@import "blocks/layer";
+@import "blocks/header";
+@import "blocks/main";
+@import "blocks/footer";

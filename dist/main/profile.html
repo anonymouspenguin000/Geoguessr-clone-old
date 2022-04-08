@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title> Profile -  GeoGuessr clone [main]
+</title>
+<link rel="stylesheet" href="css/reset.min.css">
+<link rel="icon" href="img/favicon.png">
+<link rel="stylesheet" href="css/main.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/common.js"></script>
+
+    <script src="js/profile.js"></script>
+</head>
+<body>
+<div class="layer-top">
+    <div class="layer-top__warning warning warning--small-device">
+        <p class="warning__text">Your device is too-oo-oo-oo-oo small, so the site may display incorrectly.</p>
+        <div class="warning__close">
+            <button class="warning__button warning__button--small-device">Close</button>
+        </div>
+    </div>
+    <noscript class="layer-top__warning warning warning--auto warning--no-js">
+        <style>
+            .warning--small-device {
+                display: none !important;
+            }
+        </style>
+        <p class="warning__text">Please, enable JavaScript in your browser to be able to play this game.</p>
+    </noscript>
+</div>
+
+<header class="header">
+  <div class="header__container">
+    <p class="header__logo">GeoGuessr <span class="txt-min">clone</span></p>
+    <div class="label header__profile">
+      <span class="label__text"><a href="index.html" class="label__link label__link--icon" mblicon="home">Home</a></span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+    <div class="main__container">
+        <h1 class="main__header">Your Progress</h1>
+        <p class="paragraph paragraph--center">
+            Your progress is the conclusion of your finished games. It is kept locally on your PC; servers or remote databases aren't used. You can export/import your progress anytime.
+        </p>
+        <section class="stats-section main__section main__section--stats">
+    <h2 class="section-header">Stats</h2>
+    <div class="stats-section__part">
+        <h3 class="section-header section-header--smaller">Total</h3>
+        <div class="stats stats-section__stats">
+            
+            <div class="stats__card stats-card">
+    <div class="stats-card__elem stats-card__elem--icon icon">
+        <img src="img/region.png" alt="icon" class="icon__img">
+    </div>
+    <p class="stats-card__elem stats-card__elem--value stat-value stat-value--total--loc">0</p>
+    <p class="stats-card__elem stats-card__elem--title">Locations discovered</p>
+</div>
+
+            <div class="stats__card stats-card">
+    <div class="stats-card__elem stats-card__elem--icon icon">
+        <img src="img/timer.png" alt="icon" class="icon__img">
+    </div>
+    <p class="stats-card__elem stats-card__elem--value stat-value stat-value--total--time">0</p>
+    <p class="stats-card__elem stats-card__elem--title">Time playing</p>
+</div>
+
+            <div class="stats__card stats-card">
+    <div class="stats-card__elem stats-card__elem--icon icon">
+        <img src="img/points.png" alt="icon" class="icon__img">
+    </div>
+    <p class="stats-card__elem stats-card__elem--value stat-value stat-value--total--pts">0</p>
+    <p class="stats-card__elem stats-card__elem--title">Points got</p>
+</div>
+
+        </div>
+    </div>
+    <div class="stats-section__part">
+        <h3 class="section-header section-header--smaller">Best</h3>
+        <div class="stats stats-section__stats">
+            <div class="stats__card stats-card">
+    <div class="stats-card__elem stats-card__elem--icon icon">
+        <img src="img/accuracy.png" alt="icon" class="icon__img">
+    </div>
+    <p class="stats-card__elem stats-card__elem--value stat-value stat-value--best--acc">0%</p>
+    <p class="stats-card__elem stats-card__elem--title">Accuracy</p>
+</div>
+
+            <div class="stats__card stats-card">
+    <div class="stats-card__elem stats-card__elem--icon icon">
+        <img src="img/timer.png" alt="icon" class="icon__img">
+    </div>
+    <p class="stats-card__elem stats-card__elem--value stat-value stat-value--best--time">0</p>
+    <p class="stats-card__elem stats-card__elem--title">Time guessing</p>
+</div>
+
+            <div class="stats__card stats-card">
+    <div class="stats-card__elem stats-card__elem--icon icon">
+        <img src="img/points.png" alt="icon" class="icon__img">
+    </div>
+    <p class="stats-card__elem stats-card__elem--value stat-value stat-value--best--pts">0</p>
+    <p class="stats-card__elem stats-card__elem--title">Points for a location</p>
+</div>
+
+        </div>
+    </div>
+    <div class="stats-section__part">
+        <h3 class="section-header section-header--smaller">Average</h3>
+        <div class="stats stats-section__stats">
+            <div class="stats__card stats-card">
+    <div class="stats-card__elem stats-card__elem--icon icon">
+        <img src="img/accuracy.png" alt="icon" class="icon__img">
+    </div>
+    <p class="stats-card__elem stats-card__elem--value stat-value stat-value--avg--acc">0%</p>
+    <p class="stats-card__elem stats-card__elem--title">Accuracy</p>
+</div>
+
+            <div class="stats__card stats-card">
+    <div class="stats-card__elem stats-card__elem--icon icon">
+        <img src="img/timer.png" alt="icon" class="icon__img">
+    </div>
+    <p class="stats-card__elem stats-card__elem--value stat-value stat-value--avg--time">0</p>
+    <p class="stats-card__elem stats-card__elem--title">Time guessing</p>
+</div>
+
+            <div class="stats__card stats-card">
+    <div class="stats-card__elem stats-card__elem--icon icon">
+        <img src="img/points.png" alt="icon" class="icon__img">
+    </div>
+    <p class="stats-card__elem stats-card__elem--value stat-value stat-value--avg--pts">0</p>
+    <p class="stats-card__elem stats-card__elem--title">Points for a location</p>
+</div>
+
+        </div>
+    </div>
+</section>
+
+        <section class="history-section main__section main__section--history">
+    <h2 class="section-header">History</h2>
+    <div class="history-section__history">
+        <table class="history-section__table table">
+            <thead class="table__head">
+                <tr class="table__row">
+                    <th class="table__cell table__cell--header">#</th>
+                    <th class="table__cell table__cell--header">Region</th>
+                    <th class="table__cell table__cell--header">Guess Position</th>
+                    <th class="table__cell table__cell--header">Real Position</th>
+                    <th class="table__cell table__cell--header">Distance</th>
+                    <th class="table__cell table__cell--header">Accuracy</th>
+                    <th class="table__cell table__cell--header">Time</th>
+                    <th class="table__cell table__cell--header">Points</th>
+                    <th class="table__cell table__cell--header">Date</th>
+                </tr>
+            </thead>
+            <tbody class="table__body history__main">
+                <tr class="table__row table__row--ref" hidden> <!-- Just a reference to clone -->
+                    <td class="table__cell table__cell--id"></td>
+                    <td class="table__cell table__cell--rg"></td>
+                    <td class="table__cell table__cell--gp"></td>
+                    <td class="table__cell table__cell--rp"></td>
+                    <td class="table__cell table__cell--ds"></td>
+                    <td class="table__cell table__cell--ac"></td>
+                    <td class="table__cell table__cell--tm"></td>
+                    <td class="table__cell table__cell--pt"></td>
+                    <td class="table__cell table__cell--dt"></td>
+                </tr>
+                <!--<tr class="table__row">
+                    <td class="table__cell">567</td>
+                    <td class="table__cell">Exercitation ullamco</td>
+                    <td class="table__cell">Laboris</td>
+                    <td class="table__cell">Nisi</td>
+                    <td class="table__cell">Ut aliquip</td>
+                    <td class="table__cell">Ex ea commodo consequat. Duis aute irure dolor</td>
+                    <td class="table__cell">In reprehenderit</td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__cell">89</td>
+                    <td class="table__cell">Sed do blabla</td>
+                    <td class="table__cell">Eiusmod tempor incididunt</td>
+                    <td class="table__cell">Magna aliqua bla</td>
+                    <td class="table__cell">Ut enim blablabla</td>
+                    <td class="table__cell">Ad minim</td>
+                    <td class="table__cell">Quis nostrud bla</td>
+                </tr>
+                <tr class="table__row">
+                    <td class="table__cell">0</td>
+                    <td class="table__cell">Exercitation</td>
+                    <td class="table__cell">Laboris blablablablabla</td>
+                    <td class="table__cell">Nisi bla</td>
+                    <td class="table__cell">Ut aliquip bla</td>
+                    <td class="table__cell">Ex ea commodo</td>
+                    <td class="table__cell">In bla</td>
+                </tr>-->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+        <section class="progress-stg main__section main__section--progress-stg"> <!-- STG = Settings -->
+    <h2 class="section-header">Progress Settings</h2>
+    <div class="progress-stg__settings">
+        <div class="progress-stg__btn-set progress-stg__btn-set--cb btn-set btn-set--cb"> <!-- CB = Checkbox -->
+            <div class="cb progress-stg__cb">
+                <label class="label cb__label">
+                    <input type="checkbox" class="label__checkbox progress-stg__option progress-stg__option--pause-log">
+                    <span class="label__text">Pause logging progress</span>
+                </label>
+            </div>
+        </div>
+        <div class="progress-stg__btn-set btn-set">
+            <div class="btn progress-stg__btn progress-stg__btn--export">
+                <button class="btn__btn">Export</button>
+            </div>
+            <div class="btn progress-stg__btn progress-stg__btn--import">
+                <button class="btn__btn">Import</button>
+            </div>
+            <div class="btn btn--danger progress-stg__btn progress-stg__btn--delete">
+                <button class="btn__btn">Delete</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </div>
+</main>
+
+<footer class="footer">
+  <div class="footer__wrapper">
+    <div class="footer__part--top">
+      <div class="footer__container">
+        <div class="footer__section footer__section--disclaimer footer-section">
+          <h3 class="footer-section__part footer-section__part--header">
+            Disclaimer
+          </h3>
+          <p class="footer-section__part footer-section__part--text">
+            I'm not a pirate. I didn't hack any sources. I don't cooperate with pirates or somebody else who's bad... I just took an idea for my own and others' education/experience making web-apps and working with APIs. I don't monetize this project. I encourage you to use the original. Thank you for your attention.
+          </p>
+          <div class="footer-section__part footer-section__part--image">
+            <a href="https://geoguessr.com/" target="_blank"><img src="img/original.svg" alt="GeoGuessr" class="footer-section__image"></a>
+          </div>
+        </div>
+        <div class="footer__section footer__section--contact footer-section">
+          <h3 class="footer-section__part footer-section__part--header">
+            Contact
+          </h3>
+          <div class="footer-section__part footer-section__part--list footer-section__part--text footer-list">
+            <ul class="footer-list__list">
+              <li class="footer-list__item">E-mail: <a href="mailto:anopeng000@gmail.com" target="_blank">anopeng000@gmail.com</a></li>
+              <li class="footer-list__item">Telegram: @vl_pnk</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__section footer__section--tech footer-section">
+          <h3 class="footer-section__part footer-section__part--header">
+            Built with...
+          </h3>
+          <div class="footer-section__part footer-section__part--list footer-section__part--text footer-list">
+            <ul class="footer-list__list">
+              <li class="footer-list__item">NPM</li>
+              <li class="footer-list__item">Gulp</li>
+              <li class="footer-list__item">HTML</li>
+              <li class="footer-list__item">SASS (CSS-PP)</li>
+              <li class="footer-list__item">JavaScript</li>
+              <li class="footer-list__item">jQuery</li>
+              <li class="footer-list__item">Google Maps API</li>
+              <li class="footer-list__item">Street View API</li>
+              <li class="footer-list__item">Methodology: BEM</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__part--bottom">
+      <div class="footer__container">
+        <p class="footer__copy">
+          &copy; No License (Cloned).
+        </p>
+        <p class="footer__github">
+          My GitHub: <a href="https://github.com/anonymouspenguin000" target="_blank">AnonymousPenguin000</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

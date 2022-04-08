@@ -1,0 +1,29 @@
+$text-color: #999999;
+$white-color-transform: brightness(0.6); // to adjust colors of white images.
+$selection-color: #6666cc;
+$accent-color: #000020;
+$tsp-ui-bg: rgba(255, 255, 255, 0.05);
+$danger-btn-color: #ff6666;
+$scroll-bounds-color: rgba(255, 255, 255, 0.5);
+$main-bg: linear-gradient(darken($accent-color, 3), lighten($accent-color, 3)) no-repeat 100% 100%;
+
+$container-width: 80%;
+$header-height: 10rem;
+$ui-border: 2px solid $text-color;
+$ui-bdrs: 10px;
+$main-v-padding: 20px; // v - vertical (top, bottom)
+$sidebar-accent-border: 5px solid $text-color;
+$sbz: 2rem; // scroll bounds size
+
+$game-panel-tsp-bgc: rgba(0, 0, 0, 0.5);
+
+$uhd: 2560px;
+$fhd: 1920px;
+$hdl: 1440px;
+$hd: 1280px;
+$tbt: 768px;
+$mblxl: 512px;
+$mbll: 425px;
+$mblm: 375px;
+$mbls: 320px;
+$toosmall: 299px;

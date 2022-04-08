@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title> GeoGuessr clone [main]
+</title>
+<link rel="stylesheet" href="css/reset.min.css">
+<link rel="icon" href="img/favicon.png">
+<link rel="stylesheet" href="css/main.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/common.js"></script>
+
+    <link rel="stylesheet" href="css/game.min.css">
+    <script src="js/game.js"></script>
+</head>
+<body>
+<div class="layer-top">
+    <div class="layer-top__warning warning warning--small-device">
+        <p class="warning__text">Your device is too-oo-oo-oo-oo small, so the site may display incorrectly.</p>
+        <div class="warning__close">
+            <button class="warning__button warning__button--small-device">Close</button>
+        </div>
+    </div>
+    <noscript class="layer-top__warning warning warning--auto warning--no-js">
+        <style>
+            .warning--small-device {
+                display: none !important;
+            }
+        </style>
+        <p class="warning__text">Please, enable JavaScript in your browser to be able to play this game.</p>
+    </noscript>
+</div>
+
+<div class="game-results" hidden>
+    <div class="game-results__container">
+        <h2 class="game-results__header section-header">Results</h2>
+        <div class="game-results__map">
+            <div class="map__map" id="results-map"></div>
+        </div>
+        <div class="game-results__numbers">
+            <div class="game-results__string string">
+                <p class="string__paragraph">Region: <span class="game-results__number game-results__number--region"></span></p>
+            </div>
+            <div class="game-results__string string">
+                <p class="string__paragraph">
+                    Guess position:
+                    <a href="#" target="_blank" class="game-results__number game-results__number--position--guess"></a>
+                </p>
+                <p class="string__paragraph">
+                    Real position:
+                    <a href="#" target="_blank" class="game-results__number game-results__number--position--real"></a>
+                </p>
+            </div>
+            <div class="game-results__string string">
+                <p class="string__paragraph">
+                    Distance:
+                    <span class="game-results__number game-results__number--distance"></span>
+                </p>
+                <p class="string__paragraph">Time:
+                    <span class="game-results__number game-results__number--time"></span>
+                </p>
+            </div>
+            <div class="game-results__string string">
+                <p class="string__paragraph">
+                    Guess accuracy:
+                    <span class="game-results__number game-results__number--accuracy"></span>
+                </p>
+                <p class="string__paragraph">
+                    Points:
+                    <span class="game-results__number game-results__number--points"></span>
+                </p>
+            </div>
+            <div class="game-results__string string">
+                <p class="string__paragraph">
+                    Guess accuracy formula:
+                    <br><span class="game-results__number game-results__number--formula--accuracy">1 - D / (E / 4); A &ge; 0</span>
+                </p>
+                <p class="string__paragraph">
+                    Points formula:
+                    <br><span class="game-results__number game-results__number--formula--points">Floor(A * (1 / (1 + T / S)) * M)</span>
+                </p>
+            </div>
+            <div class="game-results__string string">
+                <p class="string__paragraph">
+                    Distance [meters] <span class="game-results__number game-results__number--variable">(D);</span>
+                    Earth circumference [meters] <span class="game-results__number game-results__number--variable">(E);</span>
+                    Accuracy [%] <span class="game-results__number game-results__number--variable">(A);</span>
+                    Time [seconds] <span class="game-results__number game-results__number--variable">(T);</span>
+                    Seconds divider [seconds] <span class="game-results__number game-results__number--variable">(S) = 120;</span>
+                    Max points [1] <span class="game-results__number game-results__number--variable">(M) = 25000</span>
+                </p>
+            </div>
+            <div class="game-results__string string">
+                <p class="string__paragraph">
+                    One second <span class="game-results__number game-results__number--variable">(1s);</span>
+                    Rounding down <span class="game-results__number game-results__number--variable">(Floor)</span>
+                </p>
+            </div>
+        </div>
+        <p class="game-results__go-home paragraph paragraph--center"><a href="index.html">Home</a></p>
+    </div>
+</div>
+
+<div class="game">
+    <div class="prepare game__prepare">
+    <div class="prepare__map-window window window--catch" style="display: none">
+        <h2 class="window__header">Please wait for 15 seconds...</h2>
+    </div>
+    <div class="prepare__map-window window window--rand">
+        <h2 class="window__header">Please drag Pegman and drop him to a random place on the blank map.</h2>
+        <div class="window__map map map--private">
+            <div class="map__map" id="prepare"></div>
+        </div>
+        <div class="window__main-btn btn" style="background-color:#bbbbbb;width: 100%;margin: 1rem;">
+            <button class="btn__btn" id="prep-fresh">Refresh the map</button>
+        </div>
+    </div>
+</div>
+
+    <div class="game__ui game-ui">
+    <div class="game-ui__panel game-ui__panel--top panel">
+        <div class="panel__part panel__part--left card-set card-set--utils">
+            <div class="card-set__card card card--util--compass">
+  <div class="card__icon util util--compass">
+    <img src="img/compass.png" alt="Compass" class="card__img">
+  </div>
+</div>
+
+            <div class="card-set__card card card--util--timer">
+    <div class="card__icon img-inv">
+        <img src="img/timer.png" alt="Timer" class="card__img">
+    </div>
+    <p class="card__label util util--timer">00:00:00</p>
+</div>
+
+        </div>
+        <div class="panel__part panel__part--right card-set">
+    <div class="card-set__card card">
+        <div class="card__icon img-inv">
+            <img src="img/region.png" alt="Region" class="card__img">
+        </div>
+        <p class="card__main stat stat--region">Region</p>
+    </div>
+</div>
+
+    </div>
+    <div class="game-ui__panel game-ui__panel--bottom panel">
+        <div class="panel__part navigation">
+    <div class="navigation__btn game-btn">
+        <button class="game-btn__btn game-nav game-nav--quit img-inv" title="Quit">
+            <img src="img/quit.png" alt="X" class="game-btn__img">
+        </button>
+    </div>
+    <div class="navigation__btn game-btn">
+        <button class="game-btn__btn game-nav game-nav--go-to-start img-inv" title="Go to the Start">
+            <img src="img/flag.png" alt="Flag" class="game-btn__img">
+        </button>
+    </div>
+    <div class="navigation__btn game-btn">
+        <button class="game-btn__btn game-nav game-nav--zoom-in img-inv" title="Zoom In">
+            <img src="img/zoomIn.png" alt="+" class="game-btn__img">
+        </button>
+    </div>
+    <div class="navigation__btn game-btn">
+        <button class="game-btn__btn game-nav game-nav--zoom-out img-inv" title="Zoom Out">
+            <img src="img/zoomOut.png" alt="-" class="game-btn__img">
+        </button>
+    </div>
+    <!--<div class="navigation__btn game-btn">
+        <button class="game-btn__btn game-nav game-nav--bug img-inv" title="Try fixing">
+            <img src="img/bug.png" alt="Bug" class="game-btn__img">
+        </button>
+    </div>-->
+</div>
+
+        <div class="panel__part guess-card">
+            <div class="guess-card__minimap-tools minimap-tools">
+  <div class="minimap-tools__btn game-btn">
+    <button class="game-btn__btn mm-tool mm-tool--bigger" title="Bigger">
+      <img src="img/minimap-bigger.png" alt="+" class="game-btn__img">
+    </button>
+  </div>
+  <div class="minimap-tools__btn game-btn">
+    <button class="game-btn__btn mm-tool mm-tool--smaller" title="Smaller">
+      <img src="img/minimap-smaller.png" alt="-" class="game-btn__img">
+    </button>
+  </div>
+  <div class="minimap-tools__btn game-btn" hidden>
+    <button class="game-btn__btn mm-tool mm-tool--pin" title="Pin">
+      <img src="img/minimap-pin.png" alt="*" class="game-btn__img">
+    </button>
+  </div>
+  <div class="minimap-tools__btn game-btn">
+    <button class="game-btn__btn mm-tool mm-tool--toggle" title="Toggle">
+      <img src="img/toggle-minimap.png" alt="!" class="game-btn__img">
+    </button>
+  </div>
+</div>
+
+            <div class="guess-card__guess guess">
+  <div class="guess__minimap minimap">
+    <div class="minimap__map" id="minimap"></div>
+  </div>
+  <div class="guess__guess game-btn">
+    <button disabled class="game-btn__btn game-btn__btn--full game-nav game-nav--guess" title="Guess">Guess</button>
+  </div>
+</div>
+
+        </div>
+    </div>
+</div>
+
+    <div class="game__main game-main">
+    <div class="game-main__panorama" id="panorama"></div>
+</div>
+</div>
+<script src="js/game_map.js"></script>
+</body>
+</html>

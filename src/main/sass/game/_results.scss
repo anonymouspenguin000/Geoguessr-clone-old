@@ -1,0 +1,47 @@
+.game-results {
+  font-size: 4rem;
+  &__container {
+    padding: 1em 0;
+    @include container();
+  }
+  &__map {
+    height: 50rem;
+    margin: 0 auto;
+    width: 70%;
+  }
+  &__map-wrapper {
+    width: 70%;
+  }
+  &__numbers {
+    background-color: $tsp-ui-bg;
+    border-radius: $ui-bdrs;
+    margin: 1em;
+    padding: 1em;
+  }
+  &__number {
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: -0.02ch;
+    word-spacing: -0.6ch;
+    white-space: nowrap;
+  }
+}
+.string {
+  display: flex;
+  justify-content: center;
+  &__paragraph {
+    padding: 0.3em 0.75em;
+    //text-align: center;
+    width: 50%;
+    &:first-child {
+      text-align: right;
+    }
+    &:last-child {
+      text-align: left;
+    }
+    &:only-child {
+      text-align: center;
+      width: 100%;
+    }
+  }
+}

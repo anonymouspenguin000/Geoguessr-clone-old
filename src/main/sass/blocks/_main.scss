@@ -1,0 +1,35 @@
+.main {
+  &__header {
+    font-size: 5rem;
+    font-weight: bold;
+    padding: 0.5em 0;
+    text-align: center;
+  }
+  &__container {
+    box-sizing: border-box;
+    padding:
+      calc(#{$header-height} + #{$main-v-padding}) 5rem // top, right
+      #{$main-v-padding} 5rem; // bottom, left
+
+    @include container();
+  }
+  &__section {
+    padding-bottom: 2rem;
+    &--enter {
+      margin: 0 auto;
+      padding: 2.5rem;
+    }
+  }
+  @media screen and (max-width: $tbt) {
+    &__container {
+      padding-right: 0;
+      padding-left: 0;
+      width: 90%;
+    }
+  }
+}
+@import "_main_home/description-section";
+@import "_main_home/_enter-section";
+@import "_main_profile/_stats-section";
+@import "_main_profile/_history-section";
+@import "_main_profile/_settings-section";

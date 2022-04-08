@@ -1,0 +1,122 @@
+.footer {
+  &__wrapper {
+    background-color: $accent-color;
+    border-top: $sidebar-accent-border;
+    margin-top: 3rem;
+    padding: 1rem 0;
+  }
+
+  &__part {
+    &--top {
+      padding-bottom: 2.5rem;
+    }
+
+    &--bottom {
+    }
+  }
+
+  &__container {
+    justify-content: space-between;
+    @include container(true);
+  }
+
+  &__section {
+    max-width: 25%;
+    padding-right: 8%;
+    width: max-content;
+    &--disclaimer {
+    }
+
+    &--contact {
+    }
+
+    &--tech {
+    }
+  }
+
+  &__copy {
+  }
+
+  &__github {
+  }
+  @media screen and (max-width: $hd) {
+    &__container {
+      flex-wrap: wrap;
+    }
+    &__section {
+      padding-right: 0;
+      max-width: 42%;
+      width: auto;
+      &--tech {
+        padding: 2rem 0;
+      }
+    }
+  }
+  @media screen and (max-width: $tbt){
+    &__container {
+      display: block;
+    }
+    &__section {
+      margin: 0 auto;
+      max-width: 90%;
+      padding: 2.5rem 0;
+    }
+  }
+  @media screen and (max-width: $mblxl){
+    &__github {
+      word-break: break-all;
+    }
+  }
+}
+
+.footer-section {
+  &__part {
+    &--header {
+      font-size: 4rem;
+      padding: 0.25em 0;
+    }
+
+    &--text {
+      font-size: 2.75rem;
+      text-align: justify;
+    }
+
+    &--image {
+      padding: {
+        top: 2rem;
+        right: 10%;
+      };
+    }
+
+    &--list {
+    }
+  }
+
+  &__image {
+  }
+
+  @media screen and (max-width: $tbt) {
+    &__part {
+      &--text {
+        text-align: left;
+      }
+    }
+  }
+  @media screen and (max-width: $mblxl) {
+    &__part {
+      &--list, {
+        word-break: break-all;
+      }
+    }
+  }
+}
+
+.footer-list {
+  &__list {
+    list-style-type: square;
+    padding-left: 0.5em;
+  }
+
+  &__item {
+  }
+}

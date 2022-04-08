@@ -1,0 +1,17 @@
+@mixin reset-input() {
+  background: none;
+  border: none;
+  outline: none;
+}
+@mixin flex($align: flex-start, $vertical: flex-start) {
+  display: flex;
+  justify-content: $align;
+  align-items: $vertical;
+}
+@mixin container($flex: false) {
+  margin: 0 auto;
+  width: $container-width;
+  @if ($flex) {
+    display: flex;
+  }
+}

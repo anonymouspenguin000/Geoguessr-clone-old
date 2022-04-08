@@ -1,0 +1,50 @@
+.panel {
+  @include flex(space-between);
+  &__part {
+    background-color: $game-panel-tsp-bgc;
+    border-radius: $ui-bdrs;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 998;
+    @include flex();
+  }
+}
+.card-set {
+  &__card {
+    margin: 0 1rem;
+    @include flex($vertical: center);
+  }
+}
+.card {
+  &__img {
+    width: 6.5rem;
+  }
+}
+.game-btn {
+  &__btn {
+    background: none;
+    border: none;
+    transition-duration: 0.1s;
+    padding: 0;
+    width: 100%;
+    &:hover {
+      transform: rotate(10deg);
+    }
+    &--full {
+      padding: 0.5em 0;
+      width: 100%;
+      &:hover {
+        transform: none;
+      }
+    }
+  }
+  &__img {
+    height: 100%;
+    width: 100%;
+  }
+}
+.util {
+  &--timer {
+    width: 8ch;
+  }
+}

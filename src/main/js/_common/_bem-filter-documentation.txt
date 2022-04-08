@@ -1,0 +1,62 @@
+/*
+* Usage:
+* * Select elements with jQuery and call this function:
+*   $(selector).bem([ {} ]);
+* * Specify BEM parts you want to filter:
+*   $(...).bem([ { b: block, e: element, m: modifier, mv: modifierValue } ]);
+* * Do anything:
+*   $(...).bem(...).css(...);
+* How it works and what we've done:
+* * For example: (A)
+*   $('div')
+* * We've selected these nodes (look at the classes): (B)
+*   <div class="myblock1 myblock4__myel1 myblock1--mymod2--mymodval1">
+*   <div class="myblock1__myel1">
+*   <div class="myblock2__myel1">
+*   <div class="myblock2 myblock2__myel2 myblock2--mymod1">
+*   <div class="myblock3__myblock1 myblock4 myblock4--mymod1">
+*   <!-- Some of these BEM classes is nonsense, but let them be here -->
+* * Then we apply BEM parts: (C)
+*   $(...).bem([ { b: 'myblock1' } ]);
+* * We've specified a block. So we've got nodes with class names that contain this block: (D)
+*   <div class="myblock1 myblock1--mymod2--mymodval1">
+*   <div class="myblock1__myel1">
+* * The class of the FIRST node we got contain the block `myblock1`, so it matches the filter.
+* * The SECOND node we got has a class of an ELEMENT of the block `myblock1`, and it matches the filter because it contains the block `myblock1`
+* * Look at the 5th node of jQuery selector (step B above). One of its classes contains the keyword `myblock1`, but it DOESN't match
+* *  the filter (step D) because this keyword is not a block but an element (in the filter, we actually select blocks).
+* * Another BEM case with the same (B) jQuery select: (E)
+*   $(...).bem([ { b: 'myblock2', e: 'myel1' } ]);
+* * Got: (F)
+*   <div class="myblock2__myel1">
+* * Here we select nodes with ELEMENTS `myel1` that inherit the block `myblock2`. There's only one node (F).
+* * Another case: (G)
+*   $(...).bem([ { m: 'mymod1' } ]);
+* * Selected by a modifier: (H)
+*   <div class="myblock2 myblock2__myel2 myblock2--mymod1">
+*   <div class="myblock3__myblock1 myblock4 myblock4--mymod1">
+* * These nodes contain modifiers `mymod1`, so they match the filter.
+* * Selecting by modifier but not modvalue selects boolean and double modifiers.
+* * Selecting by modvalue selects every double modifier with specified values.
+* * You can also mix as you want: BLOCK + MODIFIER, or MODIFIER + MODVALUE, or ELEMENT + MODVALUE, etc.
+* Element filter has another special value: `-1`. It means, that we skip all ELEMENT inheritances.
+* * For example: (I)
+*   $(...).bem([ { b: 'myblock1', e: -1 } ])
+* * - if we want to select only nodes that match the block `block1`, but not elements that inherit this block: (J)
+*   <div class="myblock1 myblock4__myel1 myblock1--mymod2--mymodval1">
+*   <!-- INCORRECT --> <div class="myblock1__myel1"> <!-- INCORRECT -->
+* * The first element matches the filter, because: A. It has the block `myblock1`; B. It doesn't have elements that inherit this block.
+* * The second element doesn't match the filter, because it has an element that inherit the block `myblock1`.
+* * Block, modifier and modvalue can't be ignored by `-1`
+* "Why an array then the filter?" - because you can pass multiple filters. In this case, the original collection
+*  will be filtered multiple times.
+* Example:
+* * Code: (K)
+*   $(...).bem([ { b: 'myblock1' }, { e: 'myel1' }, { b: 'myblock2', m: 'mymod1' } ]);
+* * Result: (L)
+*   <div class="myblock1 myblock4__myel1 myblock1--mymod2--mymodval1"> <!-- First filter -->
+*   <div class="myblock1__myel1"> <!-- First and second filter -->
+*   <div class="myblock2__myel1"> <!-- Second filter -->
+*   <div class="myblock2 myblock2__myel2 myblock2--mymod1"> <!-- Third filter -->
+* * There's three filters, so the original collection will be filtered three times.
+* The end :D

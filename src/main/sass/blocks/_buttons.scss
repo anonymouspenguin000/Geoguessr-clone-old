@@ -1,0 +1,28 @@
+.btn {
+  background-color: #ffffff;
+  border-radius: $ui-bdrs;
+  &:active {
+    opacity: 0.8;
+  }
+  &__btn {
+    height: 100%;
+    padding: 0.5em 0;
+    width: 100%;
+    @include reset-input();
+    &--special {
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+    }
+  }
+  &--preferences {}
+  &--submit {}
+  &--danger {
+    background-color: $danger-btn-color;
+  }
+}
+.btn-set {
+  &__btn {
+
+  }
+}

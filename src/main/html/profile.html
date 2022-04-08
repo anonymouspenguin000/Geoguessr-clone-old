@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include('_head.html', {
+        titleSuffix: 'Profile'
+    })
+    <script src="js/profile.js"></script>
+</head>
+<body>
+@@include('_layer.html')
+@@include('_header.html', {
+    label: 'Home',
+    href: 'index.html',
+    icon: 'home'
+})
+@@include('_main_profile.html')
+@@include('_footer.html')
+</body>
+</html>

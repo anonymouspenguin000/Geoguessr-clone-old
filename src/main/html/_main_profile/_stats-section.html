@@ -1,0 +1,92 @@
+<section class="stats-section main__section main__section--stats">
+    <h2 class="section-header">Stats</h2>
+    <div class="stats-section__part">
+        <h3 class="section-header section-header--smaller">Total</h3>
+        <div class="stats stats-section__stats">
+            <!--@@include('_stats-card.html', {
+                icon: 'img/locations.png',
+                value: '0',
+                title: 'Games played'
+            })
+            @@include('_stats-card.html', {
+                icon: 'img/locations.png',
+                value: '0',
+                title: 'Total score'
+            })
+            @@include('_stats-card.html', {
+                icon: 'img/time.png',
+                value: '0 Hours',
+                title: 'Time spent playing'
+            })
+            @@include('_stats-card.html', {
+                icon: 'img/',
+                value: 'Value',
+                title: 'Title'
+            })-->
+            @@include('_stats-card.html', {
+                icon: 'img/region.png',
+                value: '0',
+                title: 'Locations discovered',
+                id: 'total--loc'
+            })
+            @@include('_stats-card.html', {
+                icon: 'img/timer.png',
+                value: '0',
+                title: 'Time playing',
+                id: 'total--time'
+            })
+            @@include('_stats-card.html', {
+                icon: 'img/points.png',
+                value: '0',
+                title: 'Points got',
+                id: 'total--pts'
+            })
+        </div>
+    </div>
+    <div class="stats-section__part">
+        <h3 class="section-header section-header--smaller">Best</h3>
+        <div class="stats stats-section__stats">
+            @@include('_stats-card.html', {
+                icon: 'img/accuracy.png',
+                value: '0%',
+                title: 'Accuracy',
+                id: 'best--acc'
+            })
+            @@include('_stats-card.html', {
+                icon: 'img/timer.png',
+                value: '0',
+                title: 'Time guessing',
+                id: 'best--time'
+            })
+            @@include('_stats-card.html', {
+                icon: 'img/points.png',
+                value: '0',
+                title: 'Points for a location',
+                id: 'best--pts'
+            })
+        </div>
+    </div>
+    <div class="stats-section__part">
+        <h3 class="section-header section-header--smaller">Average</h3>
+        <div class="stats stats-section__stats">
+            @@include('_stats-card.html', {
+                icon: 'img/accuracy.png',
+                value: '0%',
+                title: 'Accuracy',
+                id: 'avg--acc'
+            })
+            @@include('_stats-card.html', {
+                icon: 'img/timer.png',
+                value: '0',
+                title: 'Time guessing',
+                id: 'avg--time'
+            })
+            @@include('_stats-card.html', {
+                icon: 'img/points.png',
+                value: '0',
+                title: 'Points for a location',
+                id: 'avg--pts'
+            })
+        </div>
+    </div>
+</section>

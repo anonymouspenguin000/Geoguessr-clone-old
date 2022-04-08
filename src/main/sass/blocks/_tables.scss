@@ -1,0 +1,21 @@
+.table {
+  background-color: $tsp-ui-bg;
+  border: $ui-border;
+  border-collapse: separate !important;
+  border-radius: $ui-bdrs;
+  font-size: 2.5rem;
+  overflow: hidden;
+  &__head {
+    background-color: $tsp-ui-bg;
+  }
+  &__cell {
+    border: $ui-border;
+    padding: 0.4em;
+    &--header {
+      font-weight: bold;
+    }
+    &--geolink {
+      padding-right: 1.4em;
+    }
+  }
+}

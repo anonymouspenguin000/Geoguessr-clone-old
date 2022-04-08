@@ -1,0 +1,36 @@
+.history-section {
+  &__history {
+    width: 100%;
+  }
+  &__table {
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  @media screen and (max-width: $hd) {
+    &__history {
+      border-radius: $ui-bdrs;
+      box-shadow:
+              inset $sbz 0 $sbz (-$sbz) $scroll-bounds-color,
+              inset (-$sbz) 0 $sbz (-$sbz) $scroll-bounds-color;
+      overflow-x: scroll;
+      &::before {
+        content: "Scrollable";
+        display: block;
+        font-size: 0.9em;
+        height: 0;
+        margin-left: 0.5em;
+        position: absolute;
+        transform: translateY(-1.1em);
+      }
+    }
+    &__table {
+      width: auto;
+    }
+  }
+}
+@media screen and (max-width: $hd) {
+  .table {
+    font-size: 3rem;
+  }
+}

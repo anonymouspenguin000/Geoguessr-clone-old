@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title> Home -  GeoGuessr clone [main]
+</title>
+<link rel="stylesheet" href="css/reset.min.css">
+<link rel="icon" href="img/favicon.png">
+<link rel="stylesheet" href="css/main.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/common.js"></script>
+
+    <script src="js/home.js"></script>
+</head>
+<body>
+<div class="layer-top">
+    <div class="layer-top__warning warning warning--small-device">
+        <p class="warning__text">Your device is too-oo-oo-oo-oo small, so the site may display incorrectly.</p>
+        <div class="warning__close">
+            <button class="warning__button warning__button--small-device">Close</button>
+        </div>
+    </div>
+    <noscript class="layer-top__warning warning warning--auto warning--no-js">
+        <style>
+            .warning--small-device {
+                display: none !important;
+            }
+        </style>
+        <p class="warning__text">Please, enable JavaScript in your browser to be able to play this game.</p>
+    </noscript>
+</div>
+
+<header class="header">
+  <div class="header__container">
+    <p class="header__logo">GeoGuessr <span class="txt-min">clone</span></p>
+    <div class="label header__profile">
+      <span class="label__text"><a href="profile.html" class="label__link label__link--icon" mblicon="progress">Progress</a></span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+    <div class="main__container">
+        <section class="description-section main__section main__section--description">
+    <h2 class="section-header">Description</h2>
+    <!--<p class="paragraph paragraph--center description-section__text">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+    <p class="paragraph paragraph--center description-section__text">
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+    </p>-->
+    <p class="paragraph paragraph--center description-section__text">
+        This is a very exciting geography game. At the start, it puts
+        the player in a random location of Google Street View (a service
+        of panoramic  photos). The player can "walk" around the
+        location to see more references. The main goal is to guess where
+        the player was placed: exact continent, exact country, state,
+        city/town, etc...
+    </p>
+    <p class="paragraph paragraph--center description-section__text">
+        You have been given a 2D-map, that you can move/zoom. You have
+        to mark your guess and click "Guess". You will be shown the
+        actual location, guess accuracy and other details.
+    </p>
+    <p class="paragraph paragraph--center description-section__text">
+        You don't have to spend hours and hours looking for the right
+        answer. It takes about 2 minutes: start, look for a couple of
+        references, mark your guess and click "Guess". That's all!
+        Many players do this way. But it's not very interesting and
+        doesn't make much progress. You can dive deeper and spend
+        lots of time to find lots of references and guess much more
+        accurate. I think it's wonderful!
+    </p>
+    <p class="paragraph paragraph--center description-section__text">
+        But nobody forbids you to go professional way, like me. You
+        can use the Internet. Yes, you can: translate foreign texts,
+        look for the streets and shops that you see, use sandboxes,
+        etc. In short, you can do everything with this game. It's
+        the most interesting way playing this game.
+    </p>
+    <p class="paragraph paragraph--center description-section__text">
+        The "couple-minute" method will give you much more points,
+        than you would get if you try the "deep" method. But the second
+        method is much more interesting. It's your choice: more points,
+        but not interesting, or fewer points, but more interesting.
+        Yes, points also depend on time. Shown below in the Tutorial.
+    </p>
+    <p class="paragraph paragraph--center description-section__text">
+        You can do everything with this game, except "hacking". All
+        the data (including the game) is loaded into your browser's
+        cache and storage, so you can replace some sources, call a
+        "winning" function to automatically win the game, use the
+        built-in devtools to see the current location, etc. It's
+        not even called "hacking", but "cheating". Game-cheating
+        is not against the law, but it's not fair. Nobody forbids
+        doing this, but it's not interesting. So do anything,
+        except hacking. If you really want to hack the game -
+        do it only for education/experience in programming. If
+        you want to enjoy the gameplay - do it without hacking.
+        But don't forget: real hacking is against the law (when
+        you harm other users, break the service, etc.).
+    </p>
+</section>
+
+        <section class="enter-section main__section main__section--enter">
+  <h2 class="section-header enter-section__item">Enter the game</h2>
+  <form action="./game.html" method="get" class="enter-form enter-section__item" id="enter">
+    <div class="input input--search enter-form__item enter-form__item--input">
+      <!--<input type="hidden" name="region" id="search-save">-->
+      <!--<input type="search" autocomplete="off" list="regions" placeholder="Play in region..." class="input__input" id="search">-->
+      <select name="region" class="input__input">
+        <option value="world">World</option>
+        <option value="north america">North America</option>
+        <option value="south america">South America</option>
+        <option value="europe">Europe</option>
+        <option value="asia">Asia</option>
+        <option value="africa">Africa</option>
+        <option value="australia">Australia</option>
+      </select>
+      <!--<input type="image" src="" class="search__go">-->
+    </div>
+    <div class="fieldset-block fieldset-block--experiments enter-form__item enter-form__item--fieldset enter-form__item--hidden">
+      <fieldset class="fieldset fieldset-block__fieldset">
+        <legend class="fieldset__legend">Experiments</legend>
+        <!--  <i>== nothing here yet ==</i>  -->
+        <label class="label fieldset-block__item">
+          <input type="checkbox" name="alwsmlscrn" class="checkbox label__checkbox">
+          <span class="label__text">Allow small screen</span>
+        </label>
+        <label class="label fieldset-block__item">
+          <input type="checkbox" name="noimg" class="checkbox label__checkbox">
+          <span class="label__text">No images</span>
+        </label>
+      </fieldset>
+    </div>
+    <div class="fieldset-block fieldset-block--preferences enter-form__item enter-form__item--fieldset enter-form__item--hidden">
+      <fieldset class="fieldset fieldset-block__fieldset">
+        <legend class="fieldset__legend">Preferences</legend>
+        <!--  <i>== nothing here yet ==</i>  -->
+        <label class="label fieldset-block__item">
+          <input type="checkbox" name="compass" class="checkbox label__checkbox">
+          <span class="label__text">Compass</span>
+        </label>
+        <label class="label fieldset-block__item">
+          <input type="checkbox" name="timer" checked class="checkbox label__checkbox">
+          <span class="label__text">Timer</span>
+        </label>
+      </fieldset>
+    </div>
+    <div class="btn btn--preferences enter-form__item enter-form__item--btn">
+      <input type="button" value="Preferences..." class="btn__btn" id="sett">
+    </div>
+    <div class="btn btn--submit enter-form__item enter-form__item--btn">
+      <input type="submit" value="Start" class="btn__btn btn__btn--special">
+    </div>
+    <datalist id="regions"></datalist>
+  </form>
+</section>
+
+        <section class="tutorial-section main__section main__section--tutorial">
+  <h2 class="section-header">Tutorial</h2> <!-- tutorial-section__item -->
+  <p class="paragraph paragraph--center tutorial-section__text">
+    So, here we go. If you want, you can set your preferences before entering the
+    game. In the first field, you specify the region you want to discover. Choose
+    what you want: the whole world (an absolutely random location), or a continent
+    you like (a random location exactly on this continent). Then you can see the
+    "Preferences" button. If you click it, you will be shown the preferences. You
+    can enable/disable the compass, or the visible timer (it will not affect the
+    in-game timer). The next feature - you can enable experiments. Just hold the
+    "Preferences" button for 3 seconds. Here you can disable "small-screen-ban",
+    for example.
+  </p>
+  <p class="paragraph paragraph--center tutorial-section__text">
+    You've set your preferences, and now you're ready to enter the game. Just press
+    the "START" button. And here... I haven't found another "cheap" way to generate
+    a random street view... You are given a blank map and the Pegman (the yellow-man).
+    If you don't see them, just wait for them to load. You have to drag Pegman and
+    drop to a random place on the blank map. Actually, the map is not blank. It
+    inherits the normal behavior of Google Maps. But its center is loaded at random
+    coordinates. When you drag and drop the Pegman, you're actually dropping it to
+    a random panorama. You just don't see anything on the map. Therefore, you can
+    miss the right place and nothing will happen. Then just try again. If nothing
+    happened 2-3 times, refresh the map - click the button below. It will load
+    another random location. And try the Pegman again. When you hit the right place,
+    you will know about it when the window disappears. In 15 seconds you will enter
+    the game. If you see the white screen - it's a bug - reload. If you see the
+    black screen - wait; nothing happened - the request was denied - reload.
+  </p>
+  <p class="paragraph paragraph--center tutorial-section__text">
+    Here, you're finally in the game. Let's look at the interface. In the left-top
+    corner are the utilities, that you can enable/disable in the Preferences.
+    In the right-top are the game stats. In the left-bottom is the game navigation:
+    quit the game, go to the start of the location and zoom the panorama. In the
+    right-bottom is the minimap, where you can mark your guess. You can make it
+    bigger/smaller, or hide/show it - for comfort. For better accuracy - move and
+    zoom. And the panorama. You can look around it by moving the mouse. If it's
+    a road, you can walk by pressing the arrows on the screen. If you want to
+    mark your guess - click a place on the minimap and then click the "Guess"
+    button.
+  </p>
+  <p class="paragraph paragraph--center tutorial-section__text">
+    Your goal is to guess where you were placed. Exactly where you were placed at
+    the start. For example, if you were placed to France, and you decided to go
+    to Spain by a road, then if you mark Spain as your guess, you will miss, because
+    you were placed to France and you should've marked France. Actually, at the
+    start, you don't know if it's France or Spain, or some another country. But that
+    was just an example.
+  </p>
+  <p class="paragraph paragraph--center tutorial-section__text">
+    At the end you are shown the results: your guess position and the real position;
+    distance between them and time spent guessing; guess accuracy and points;
+    formulas (if you want to know) and the link to the homepage. Guess accuracy
+    depends on the distance - the closer you guess, the bigger your accuracy. Points
+    depend on the accuracy and the time - the bigger your accuracy, the more points
+    you get; the faster you guess - the bigger points you get. Again, the formulas
+    are shown.
+  </p>
+  <p class="paragraph paragraph--center tutorial-section__text">
+    You can see your stats and history - the link or icon in the right-top corner of
+    the homepage. You can pause logging history; export it to a local file, import
+    or delete. Sometimes you will have to complete the "captcha".
+  </p>
+</section>
+
+    </div>
+</main>
+
+<footer class="footer">
+  <div class="footer__wrapper">
+    <div class="footer__part--top">
+      <div class="footer__container">
+        <div class="footer__section footer__section--disclaimer footer-section">
+          <h3 class="footer-section__part footer-section__part--header">
+            Disclaimer
+          </h3>
+          <p class="footer-section__part footer-section__part--text">
+            I'm not a pirate. I didn't hack any sources. I don't cooperate with pirates or somebody else who's bad... I just took an idea for my own and others' education/experience making web-apps and working with APIs. I don't monetize this project. I encourage you to use the original. Thank you for your attention.
+          </p>
+          <div class="footer-section__part footer-section__part--image">
+            <a href="https://geoguessr.com/" target="_blank"><img src="img/original.svg" alt="GeoGuessr" class="footer-section__image"></a>
+          </div>
+        </div>
+        <div class="footer__section footer__section--contact footer-section">
+          <h3 class="footer-section__part footer-section__part--header">
+            Contact
+          </h3>
+          <div class="footer-section__part footer-section__part--list footer-section__part--text footer-list">
+            <ul class="footer-list__list">
+              <li class="footer-list__item">E-mail: <a href="mailto:anopeng000@gmail.com" target="_blank">anopeng000@gmail.com</a></li>
+              <li class="footer-list__item">Telegram: @vl_pnk</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__section footer__section--tech footer-section">
+          <h3 class="footer-section__part footer-section__part--header">
+            Built with...
+          </h3>
+          <div class="footer-section__part footer-section__part--list footer-section__part--text footer-list">
+            <ul class="footer-list__list">
+              <li class="footer-list__item">NPM</li>
+              <li class="footer-list__item">Gulp</li>
+              <li class="footer-list__item">HTML</li>
+              <li class="footer-list__item">SASS (CSS-PP)</li>
+              <li class="footer-list__item">JavaScript</li>
+              <li class="footer-list__item">jQuery</li>
+              <li class="footer-list__item">Google Maps API</li>
+              <li class="footer-list__item">Street View API</li>
+              <li class="footer-list__item">Methodology: BEM</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__part--bottom">
+      <div class="footer__container">
+        <p class="footer__copy">
+          &copy; No License (Cloned).
+        </p>
+        <p class="footer__github">
+          My GitHub: <a href="https://github.com/anonymouspenguin000" target="_blank">AnonymousPenguin000</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

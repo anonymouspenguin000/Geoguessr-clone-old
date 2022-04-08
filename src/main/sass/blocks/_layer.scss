@@ -1,0 +1,31 @@
+.layer-top {
+  &__warning {
+    background-color: #ff000099;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: bold;
+    height: 100%;
+    left: 0;
+    padding: 5rem 3rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  }
+}
+
+.warning {
+  &__close {
+    margin: 2rem 0;
+  }
+  &--small-device {
+    display: none;
+    @media screen and (max-width: $toosmall) {
+      display: block;
+    }
+  }
+  &--auto {
+    display: block;
+  }
+}

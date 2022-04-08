@@ -1,0 +1,20 @@
+.label {
+  &__text {
+  }
+  &__link {
+    &--profile {
+    }
+  }
+
+  @media screen and (max-width: $tbt) {
+    &__link {
+      filter: invert(100%) $white-color-transform;
+      &[mblicon='progress'] {
+        content: url("../img/progress.png");
+      }
+      &[mblicon='home'] {
+        content: url("../img/home.png");
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+<div class="game-results" hidden>
+    <div class="game-results__container">
+        <h2 class="game-results__header section-header">Results</h2>
+        <div class="game-results__map">
+            <div class="map__map" id="results-map"></div>
+        </div>
+        <div class="game-results__numbers">
+            <div class="game-results__string string">
+                <p class="string__paragraph">Region: <span class="game-results__number game-results__number--region"></span></p>
+            </div>
+            <div class="game-results__string string">
+                <p class="string__paragraph">
+                    Guess position:
+                    <a href="#" target="_blank" class="game-results__number game-results__number--position--guess"></a>
+                </p>
+                <p class="string__paragraph">
+                    Real position:
+                    <a href="#" target="_blank" class="game-results__number game-results__number--position--real"></a>
+                </p>
+            </div>
+            <div class="game-results__string string">
+                <p class="string__paragraph">
+                    Distance:
+                    <span class="game-results__number game-results__number--distance"></span>
+                </p>
+                <p class="string__paragraph">Time:
+                    <span class="game-results__number game-results__number--time"></span>
+                </p>
+            </div>
+            <div class="game-results__string string">
+                <p class="string__paragraph">
+                    Guess accuracy:
+                    <span class="game-results__number game-results__number--accuracy"></span>
+                </p>
+                <p class="string__paragraph">
+                    Points:
+                    <span class="game-results__number game-results__number--points"></span>
+                </p>
+            </div>
+            <div class="game-results__string string">
+                <p class="string__paragraph">
+                    Guess accuracy formula:
+                    <br><span class="game-results__number game-results__number--formula--accuracy">1 - D / (E / 4); A &ge; 0</span>
+                </p>
+                <p class="string__paragraph">
+                    Points formula:
+                    <br><span class="game-results__number game-results__number--formula--points">Floor(A * (1 / (1 + T / S)) * M)</span>
+                </p>
+            </div>
+            <div class="game-results__string string">
+                <p class="string__paragraph">
+                    Distance [meters] <span class="game-results__number game-results__number--variable">(D);</span>
+                    Earth circumference [meters] <span class="game-results__number game-results__number--variable">(E);</span>
+                    Accuracy [%] <span class="game-results__number game-results__number--variable">(A);</span>
+                    Time [seconds] <span class="game-results__number game-results__number--variable">(T);</span>
+                    Seconds divider [seconds] <span class="game-results__number game-results__number--variable">(S) = 120;</span>
+                    Max points [1] <span class="game-results__number game-results__number--variable">(M) = 25000</span>
+                </p>
+            </div>
+            <div class="game-results__string string">
+                <p class="string__paragraph">
+                    One second <span class="game-results__number game-results__number--variable">(1s);</span>
+                    Rounding down <span class="game-results__number game-results__number--variable">(Floor)</span>
+                </p>
+            </div>
+        </div>
+        <p class="game-results__go-home paragraph paragraph--center"><a href="index.html">Home</a></p>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+* Usage:
+* * Create the manager:
+*   let tm = new TableManager($('tbody'), $('.row-ref'));
+*   // The first argument - a whole table or a tbody you want to manage
+*   // The second argument - the row reference to be cloned then, the cells must be empty
+* * Let our table will have 5 columns. So the row reference:
+*   <tr class="table__row row-ref">
+*     <td class="table__cell></td>
+*     <td class="table__cell"></td>
+*     <td class="table__cell"></td>
+*     <td class="table__cell"></td>
+*     <td class="table__cell"></td>
+*   </tr>
+*   +----+----+----+----+----+
+*   |    |    |    |    |    |
+*   +----+----+----+----+----+
+*   |    |    |    |    |    |
+*   +----+----+----+----+----+
+*   |    |    |    |    |    |
+*
+* * Add rows to the table. There's two ways: with an array and with an object. Let's see the first:
+*   tm.add(['Lorem', 'Ipsum', 'Dolor', 'Sit']);
+* * We have:
+*   +----+----+----+----+----+
+*   | Lo | Ip | Do | Si |    |
+*   +----+----+----+----+----+
+*   |    |    |    |    |    | // The 5th cell is empty, because we haven't passed it
+*   +----+----+----+----+----+
+*   |    |    |    |    |    |
+* * If we've passed too many items to the array, the unnecessary part just will be ignored.
+* * And the second method, with an object. It will work only in case the cells have BEM modifiers. For example, our row reference:
+*   <tr class="table__row row-ref">
+*     <td class="table__cell table__cell--id"></td> <!-- Cell:id -->
+*     <td class="table__cell table__cell--name"></td> <!-- Cell:name -->
+*     <td class="table__cell table__cell--age"></td> <!-- Cell:age -->
+*     <td class="table__cell table__cell--job"></td> <!-- Cell:job -->
+*     <td class="table__cell table__cell--family"></td> <!-- Cell:family -->
+*   </tr>
+* * And in the object that we pass, in every key specify modifiers to change specific cells:
+*   tm.add({ name: 'Joe', age: '23', family: 'Engaged' });
+*   We have:
+*   +----+----+----+----+----+
+*   | Lo | Ip | Do | Si |    |
+*   +----+----+----+----+----+
+*   |    | Jo | 23 |    | En | // Some cells are empty, because we haven't passed them
+*   +----+----+----+----+----+
+*   |    |    |    |    |    |
+* * Object properties that don't match modifiers will be ignored
+* The end :D
