@@ -34,7 +34,7 @@
   }
   &--private {
     outline: $ui-border;
-    [aria-roledescription="map"] {
+    [role="region"] {
       position: relative;
       &:before {
         background-color: #eeeeee;
